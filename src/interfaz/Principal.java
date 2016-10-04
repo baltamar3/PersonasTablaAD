@@ -38,7 +38,6 @@ public class Principal extends javax.swing.JFrame {
         mnSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Personas");
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -60,6 +59,11 @@ public class Principal extends javax.swing.JFrame {
         mnOpciones.add(jSeparator1);
 
         mnSalir.setText("Salir");
+        mnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnSalirActionPerformed(evt);
+            }
+        });
         mnOpciones.add(mnSalir);
 
         jMenuBar1.add(mnOpciones);
@@ -84,10 +88,14 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAgregarActionPerformed
-       
-        Agregar a=new Agregar(this, true);
-        a.setVisible(true);
+       Agregar a=new Agregar(this, true);
+       a.setVisible(true);
+        
     }//GEN-LAST:event_mnAgregarActionPerformed
+
+    private void mnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_mnSalirActionPerformed
 
     /**
      * @param args the command line arguments
